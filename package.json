@@ -38,6 +38,7 @@
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
+    "pro": "EGG_SERVER_ENV=prod egg-scripts start",
     "migrate:new": "egg-sequelize migration:create",
     "migrate:up": "egg-sequelize db:migrate",
     "migrate:down": "egg-sequelize db:migrate:undo",

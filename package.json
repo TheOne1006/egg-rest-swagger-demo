@@ -26,7 +26,7 @@
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": "8.9.1"
   },
   "scripts": {
     "start": "egg-scripts start --daemon",

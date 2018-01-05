@@ -1,1 +1,1 @@
-web:npm run pro
+web:npm run start

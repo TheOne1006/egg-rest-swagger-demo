@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "description": "文章分类",
+    "hidden": [ "version" ],
+    "plural": "categories",
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "*",
+        "accessType": "READ"
+      }
+    ]
+  }
+}

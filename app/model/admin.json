@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "description": "管理员",
+    "hidden": [ "version" ],
+    "maxTTL": 31556926,
+    "ttl": 1209600,
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "login"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": [ "owner", "logout" ]
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "*",
+        "accessType": "READ"
+      }
+    ]
+  },
+  "remotes": {
+    "login": {
+      "summary": "使用 username 或者 email 和 password 登录.",
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "credentials", "type": "object", "required": true, "root": true,
+          "http": { "source": "body" }
+        }
+      ],
+      "returns": {
+        "arg": "adminInfo", "type": "object", "root": true
+      },
+      "http": { "verb": "post", "path": "/login" }
+    },
+    "owner": {
+      "summary": "用户自己的信息",
+      "isStatic": true,
+      "accepts": [],
+      "returns": {
+        "arg": "data", "type": "object", "model": "admin", "root": true
+      },
+      "http": { "verb": "get", "path": "/owner" }
+    },
+    "logout": {
+      "summary": "用户登出",
+      "isStatic": true,
+      "accepts": [],
+      "returns": {
+        "arg": "data", "type": "object", "root": true
+      },
+      "http": { "verb": "get", "path": "/logout" }
+    }
+  },
+  "disabledRemotes": [ "destroy", "updateAll" ]
+}

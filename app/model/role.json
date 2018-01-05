@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "description": "角色",
+    "hidden": [ "version" ],
+    "plural": "roles",
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "*",
+        "accessType": "READ"
+      }
+    ]
+  },
+  "disabledRemotes": [ "createInstance", "updateAll", "destroy" ]
+}

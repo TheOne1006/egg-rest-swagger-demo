@@ -22,15 +22,15 @@ module.exports = () => {
     },
   };
 
-  config.sequelize = {
-    dialect: 'mysql',
-    database: 'swaggerdemo',
-    host: '101.200.52.19',
-    port: 3306,
-    username: 'root',
-    password: 'renrenQQ@@zz123',
-    timezone: '+08:00',
-  };
+  // config.sequelize = {
+  //   dialect: 'mysql',
+  //   database: 'swaggerdemo',
+  //   host: '101.200.52.19',
+  //   port: 3306,
+  //   username: 'root',
+  //   password: 'renrenQQ@@zz123',
+  //   timezone: '+08:00',
+  // };
 
   return config;
 };

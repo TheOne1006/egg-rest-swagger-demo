@@ -18,7 +18,7 @@ module.exports = {
       version: INTEGER,
     });
 
-    yield queryInterface.addIndex('Admins', [ 'username' ], { indicesType: 'UNIQUE' });
+    // yield queryInterface.addIndex('Admins', [ 'username' ], { indicesType: 'UNIQUE' });
 
     yield queryInterface.bulkInsert('Admins', [{
       id: 1,

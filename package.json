@@ -12,6 +12,7 @@
     "egg-sequelize": "^3.1.0",
     "egg-session": "^3.0.0",
     "egg-swagger": "^1.1.0",
+    "mysql2": "1.4.2",
     "sqlite3": "^3.1.13"
   },
   "devDependencies": {

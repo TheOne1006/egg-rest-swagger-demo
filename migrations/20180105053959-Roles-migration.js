@@ -33,7 +33,7 @@ module.exports = {
     }]);
 
     // 键值唯一
-    yield queryInterface.addIndex('Roles', [ 'name' ], { indicesType: 'UNIQUE' });
+    // yield queryInterface.addIndex('Roles', [ 'name' ], { indicesType: 'UNIQUE' });
 
   }),
   down: queryInterface => queryInterface.dropTable('Roles'),

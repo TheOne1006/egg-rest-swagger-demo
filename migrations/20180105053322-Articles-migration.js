@@ -61,7 +61,7 @@ module.exports = {
     },
     ]);
 
-    yield queryInterface.addIndex('Articles', [ 'title' ], { indicesType: 'UNIQUE' });
+    // yield queryInterface.addIndex('Articles', [ 'title' ], { indicesType: 'UNIQUE' });
 
   }),
   down: queryInterface => queryInterface.dropTable('Articles'),

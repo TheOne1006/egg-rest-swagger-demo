@@ -1,0 +1,5 @@
+{
+  "name": "egg-rest-swagger-demo",
+  "description": "An example app.json for heroku-docker",
+  "image": "registry.heroku.com/egg-rest-swagger-demo/web"
+}

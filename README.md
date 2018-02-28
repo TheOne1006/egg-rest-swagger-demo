@@ -14,3 +14,8 @@
 
 egg 2.2.0 版本依赖 koa-router7.7.0。  
 在本版本中无法正确匹配到路由.
+
+### Demo
+url: <http://egg-swagger-demo.herokuapp.com/explorer>  
+账号：admin:admin , demo:demo  
+如果需要其他操作，需要从 admins/login 登录后访问。  

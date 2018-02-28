@@ -7,13 +7,14 @@
     "bcrypt": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "egg": "1.7.0",
-    "egg-connector-remote": "^1.0.5",
+    "egg-connector-remote": "^1.0.6",
     "egg-scripts": "1.1.1",
     "egg-sequelize": "^3.1.0",
     "egg-session": "^3.0.0",
     "egg-swagger": "^1.1.2",
     "mysql2": "1.4.2",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^3.1.13",
+    "uid-promise": "^1.0.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",

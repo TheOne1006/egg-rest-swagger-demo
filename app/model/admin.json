@@ -60,7 +60,8 @@
       "returns": {
         "arg": "data", "type": "object", "model": "admin", "root": true
       },
-      "http": { "verb": "get", "path": "/owner" }
+      "http": { "verb": "get", "path": "/owner" },
+      "security": [{ "api_key": [] }]
     },
     "logout": {
       "summary": "用户登出",
@@ -69,7 +70,8 @@
       "returns": {
         "arg": "data", "type": "object", "root": true
       },
-      "http": { "verb": "get", "path": "/logout" }
+      "http": { "verb": "get", "path": "/logout" },
+      "security": [{ "api_key": [] }]
     }
   },
   "disabledRemotes": [ "destroy", "updateAll" ]

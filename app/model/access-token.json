@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "description": "accessToken",
+    "hidden": [],
+    "plural": "accessTokens",
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY",
+        "property": "*"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW",
+        "property": "*"
+      }
+    ]
+  }
+}

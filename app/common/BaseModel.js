@@ -283,6 +283,7 @@ BaseModel.setupRemoting = function() {
       ],
       returns: { arg: 'data', type: 'array', model: typeName, root: true },
       http: { verb: 'get', path: '/' },
+      security: [{ api_key: [] }],
     },
     createInstance: {
       summary: '创建模型的一个新实例并将其持久化到数据库中.',
@@ -295,6 +296,7 @@ BaseModel.setupRemoting = function() {
       },
       returns: { arg: 'data', model: typeName, root: true },
       http: { verb: 'post', path: '/' },
+      security: [{ api_key: [] }],
     },
     countAll: {
       summary: '统计 Model 实例数量可以使用, 可以使用 where 参数.',
@@ -307,6 +309,7 @@ BaseModel.setupRemoting = function() {
       },
       returns: { arg: 'count', type: 'number' },
       http: { verb: 'get', path: '/count' },
+      security: [{ api_key: [] }],
     },
     exists: {
       summary: '通过 {{id}} 获取 Model 实例 是否存在.',
@@ -316,6 +319,7 @@ BaseModel.setupRemoting = function() {
         http: { source: 'path' } },
       http: { verb: 'get', path: '/exists/:id' },
       returns: { arg: 'exists', type: 'object', root: true },
+      security: [{ api_key: [] }],
     },
     updateAll: {
       summary: '批量更新Model 所有实例',
@@ -335,6 +339,7 @@ BaseModel.setupRemoting = function() {
         http: { source: 'query' },
       }],
       http: { verb: 'put', path: '/' },
+      security: [{ api_key: [] }],
       returns: { arg: 'affectedRows', type: 'object' },
     },
     show: {
@@ -349,6 +354,7 @@ BaseModel.setupRemoting = function() {
       ],
       returns: { arg: 'data', model: typeName, root: true },
       http: { verb: 'get', path: '/:id' },
+      security: [{ api_key: [] }],
     },
     updateById: {
       summary: '更新模型实例的属性并将其持久化到数据源中.',
@@ -366,6 +372,7 @@ BaseModel.setupRemoting = function() {
       ],
       returns: { arg: 'data', model: typeName, root: true },
       http: { verb: 'put', path: '/:id' },
+      security: [{ api_key: [] }],
     },
     destroy: {
       accessType: 'WRITE',
@@ -375,6 +382,7 @@ BaseModel.setupRemoting = function() {
         http: { source: 'path' } },
       http: { verb: 'del', path: '/:id' },
       returns: { arg: 'count', type: 'object', root: true },
+      security: [{ api_key: [] }],
     },
   };
 

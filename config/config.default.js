@@ -44,6 +44,13 @@ module.exports = appInfo => {
       },
       basePath: '/api/v1',
       host: 'localhost:7001',
+      securityDefinitions: {
+        api_key: { // 对应
+          type: 'apiKey',
+          name: 'X-Access-Token',
+          in: 'header',
+        },
+      },
     },
     registerRemote: true,
     accessRemote: {

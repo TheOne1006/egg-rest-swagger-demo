@@ -9,7 +9,27 @@ module.exports = app => {
 
   class Role extends BaseModel {
     static async isInRole(ctx, acl, rule, curProperty, model, modelId) {
-      const userId = ctx.session && ctx.session.admin && ctx.session.admin.id;
+      let userId = ctx.session && ctx.session.admin && ctx.session.admin.id;
+
+      if (!userId) {
+        const AccessToken = app.model.AccessToken;
+
+        try {
+          const token = AccessToken.tokenIdForRequest(ctx);
+          if (token) {
+            const tokenInstance = await AccessToken.findOne({
+              where: { token },
+            });
+            if (tokenInstance && tokenInstance.userId) {
+              userId = tokenInstance.userId;
+            }
+          }
+        } catch (err) {
+          debug('token parse error');
+        }
+
+      }
+
       const inSystem = [ Role.OWNER, Role.AUTHENTICATED, Role.UNAUTHENTICATED, Role.EVERYONE ].some(item => item === rule.principalId);
 
       debug('inSystem %s', inSystem);

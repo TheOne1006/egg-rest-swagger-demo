@@ -13,4 +13,5 @@ module.exports = app => {
   app.registerRemote(app.model.Category);
   app.registerRemote(app.model.Role);
   app.registerRemote(app.model.RoleMapping);
+  app.registerRemote(app.model.AccessToken);
 };

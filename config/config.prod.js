@@ -14,6 +14,14 @@ module.exports = () => {
       },
       basePath: '/api/v1',
       host: 'egg-swagger-demo.herokuapp.com',
+      // 设置 swagger 的 security Definitions
+      securityDefinitions: {
+        api_key: { // 对应
+          type: 'apiKey',
+          name: 'X-Access-Token',
+          in: 'header',
+        },
+      },
     },
     registerRemote: true,
     accessRemote: {

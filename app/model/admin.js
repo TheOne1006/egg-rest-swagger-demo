@@ -122,11 +122,13 @@ module.exports = app => {
         debug('user id: %s, not found role', admin.id);
       }
 
-      // token
       admin.createLoginSession(credentials.ttl, credentials, ctx);
 
+      // token
+      const tokenInstance = await admin.createAccessToken(ctx, credentials.ttl);
       const adminJSON = admin.toJSON();
       adminJSON.role = roleInstance;
+      adminJSON.token = tokenInstance;
 
 
       return adminJSON;
@@ -170,6 +172,20 @@ module.exports = app => {
       const rememberMe = options.rememberMe;
 
       if (rememberMe) ctx.session.maxAge = loginTTL;
+    }
+
+    async createAccessToken(ctx, customTTL) {
+      const instance = this;
+      const adminModel = this.constructor;
+      const AccessTokenModel = ctx.model.AccessToken;
+      const ttl = Math.min(customTTL || adminModel.settings.ttl, adminModel.settings.maxTTL);
+      const token = await AccessTokenModel.createAccessTokenId();
+      const accessToken = await AccessTokenModel.create({
+        ttl,
+        token,
+        userId: instance.id,
+      });
+      return accessToken;
     }
     /**
      * 校验字段是否匹配密码

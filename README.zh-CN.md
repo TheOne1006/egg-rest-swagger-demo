@@ -13,6 +13,10 @@
 
 swagger 地址: <http://egg-swagger-demo.herokuapp.com/explorer>
 
+### Demo
+url: <http://egg-swagger-demo.herokuapp.com/explorer>  
+账号：admin:admin , demo:demo  
+如果需要其他操作，需要从 admins/login 登录后访问。  
 
 #### feature
 
